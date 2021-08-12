@@ -19,14 +19,14 @@ function package_exists() {
 # Check Statment of Script #
 ############################
 if [[ -f "$FILE" ]]; then
-    echo "$FILE exists, contine to proccessing image."
+    echo "$FILE exists, continue to processing image."
 else
     wget "$FILE" -O "$TMP_PATH/$FILE_NAME"
 fi
 if ! package_exists libguestfs-tools ; then
     echo ”Please install libguestfs-tools"
 else
-    echo ”libguestfs-tools exosts, contine to proccessing image."
+    echo ”libguestfs-tools exists, continue to processing image."
 fi
 
 
