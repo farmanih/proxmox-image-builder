@@ -1,6 +1,7 @@
-FILE=$getenv_FILE
-FILE_NAME=$getenv_FILENAME
-TMP_PATH=$getenv_TEM_PATH
+source .env
+FILE_NAME=$getenv_FILE_NAME
+FILE_URL=$getenv_FILE_URL
+TMP_PATH=$getenv_TMP_PATH
 TEMPLATE_ID=$getenv_TEMPLATE_ID
 TEMPLATE_NAME=$getenv_TEMPLATE_NAME
 TEMPLATE_INFO=$getenv_TEMPLATE_INFO
@@ -44,6 +45,6 @@ qm create "$TEMPLATE_ID" \
 --hotplug disk,network,usb \
 --serial0 "$TEMPLATE_SERIAL_0" 
 
-qm importdisk "$TEMPLATE_ID" "$TEMPLATE_PATH/$FILE_NAME" "$TEMPLATE_DISK"
-qm resize "$TEMPLATE_ID" "$TEMPLATE_DISK_ID" "$TEMPLATE_DISK_SIZE"
-qm template "$TEMPLATE_ID"
+#qm importdisk "$TEMPLATE_ID" "$TMP_PATH/$FILE_NAME" "$TEMPLATE_DISK"
+#qm resize "$TEMPLATE_ID" "$TEMPLATE_DISK_ID" "$TEMPLATE_DISK_SIZE"
+#qm template "$TEMPLATE_ID"

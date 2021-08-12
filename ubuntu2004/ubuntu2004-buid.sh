@@ -3,9 +3,10 @@
 # Get Enviromanet Varibles of Script # 
 ######################################
 source .env
-FILE=getenv_FILE
-FILE_NAME=getenv_FILENAME
-TMP_PATH=getenv_TEM_PATH
+FILE_NAME=$getenv_FILE_NAME
+FILE_URL=$getenv_FILE_URL
+TMP_PATH=$getenv_TMP_PATH
+TIMEZONE=$getenv_TIMEZONE
 
 
 ##############################
@@ -18,15 +19,17 @@ function package_exists() {
 ############################
 # Check Statment of Script #
 ############################
-if [[ -f "$FILE" ]]; then
-    echo "$FILE exists, continue to processing image."
+if [[ -f "$FILE_NAME" ]]; then
+    echo "$FILE_NAME exists, continue to processing image."
+    cp "$FILE_NAME" "$FILE_PATH/$FILE_NAME"
 else
-    wget "$FILE" -O "$TMP_PATH/$FILE_NAME"
+    wget "$FILE_URL" -O "$TMP_PATH/$FILE_NAME"
 fi
+
 if ! package_exists libguestfs-tools ; then
-    echo ”Please install libguestfs-tools"
+    echo "Please install libguestfs-tools"
 else
-    echo ”libguestfs-tools exists, continue to processing image."
+    echo "libguestfs-tools exists, continue to processing image."
 fi
 
 
