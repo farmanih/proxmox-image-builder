@@ -45,6 +45,6 @@ qm create "$TEMPLATE_ID" \
 --hotplug disk,network,usb \
 --serial0 "$TEMPLATE_SERIAL_0" 
 
-#qm importdisk "$TEMPLATE_ID" "$TMP_PATH/$FILE_NAME" "$TEMPLATE_DISK"
-#qm resize "$TEMPLATE_ID" "$TEMPLATE_DISK_ID" "$TEMPLATE_DISK_SIZE"
-#qm template "$TEMPLATE_ID"
+qm importdisk "$TEMPLATE_ID" "$TMP_PATH/$FILE_NAME" "$TEMPLATE_DISK"
+qm resize "$TEMPLATE_ID" "$TEMPLATE_DISK_ID" "$TEMPLATE_DISK_SIZE"
+qm template "$TEMPLATE_ID"
