@@ -42,8 +42,8 @@ qm create "$TEMPLATE_ID" \
 --ide2 "$TEMPLATE_IMAGE_CI" \
 --vga "$TEMPLATE_VGA" \
 --hotplug disk,network,usb \
---serial0 "TEMPLATE_SERIAL_0" 
+--serial0 "$TEMPLATE_SERIAL_0" 
 
 qm importdisk "$TEMPLATE_ID" "$TEMPLATE_PATH/$FILE_NAME" "$TEMPLATE_DISK"
-qm resize "$TEMPLATE_ID" "TEMPLATE_DISK_ID" "$TEMPLATE_DISK_SIZE"
+qm resize "$TEMPLATE_ID" "$TEMPLATE_DISK_ID" "$TEMPLATE_DISK_SIZE"
 qm template "$TEMPLATE_ID"
